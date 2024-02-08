@@ -1,6 +1,10 @@
 const express = require("express");
+const dbConnect = require("./config/dbConnect");
+
 const app = express();
 
+// DB 연결하기 
+dbConnect();
 
 // get 요청으로 해당 url에 `Hello Node`출력
 app.get("/",(req, res) => {

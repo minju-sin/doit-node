@@ -1,12 +1,12 @@
 const express = require("express");
+const getAllContacts = require("../controllers/contactController");
 const router = express.Router();
+const getAllContacts = require("../controllers/contactController");
 
 // 연락처 가져오기 
 router
 .route("/")
-    .get((req, res) => {
-        res.send("Contacts Page");   
-    })
+    .get(getAllContacts)
     .post((req, res) => {
         console.log(req.body);
         const {name, email, phone} = req.body;
